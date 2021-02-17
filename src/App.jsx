@@ -47,6 +47,7 @@ const App = () => {
   }, [dispatch]);
 
   console.log("Node environment", process.env.NODE_ENV);
+  console.log("SERVER", process.env.REACT_APP_SERVER_API);
 
   return (
     <Fragment>
