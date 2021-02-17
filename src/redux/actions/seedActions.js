@@ -12,8 +12,10 @@ import {
 import { setMessage } from "./modalActions";
 import axios from "axios";
 
+const SERVER_API = process.env.REACT_APP_SERVER_API;
+
 export const searchQuery = (query) => async (dispatch) => {
-  const response = await axios.post("http://localhost:5000/seeds/filter", {
+  const response = await axios.post(`${SERVER_API}/seeds/filter`, {
     query,
   });
 
@@ -47,7 +49,7 @@ export const addSeedToCart = (seedId) => async (dispatch) => {
 export const getItemsFromCart = (cart) => async (dispatch) => {
   try {
     console.log("cart", cart);
-    const response = await axios.post("http://localhost:5000/seeds/cart", cart);
+    const response = await axios.post(`${SERVER_API}/seeds/cart`, cart);
     console.log("response", response);
     dispatch({
       type: GET_ITEMS_FROM_CART,
@@ -81,11 +83,11 @@ export const createSeed = (data, imgFile) => async (dispatch) => {
 
     const {
       data: { path },
-    } = await axios.post("http://localhost:5000/images", formData);
+    } = await axios.post(`${SERVER_API}/images`, formData);
 
-    const imageUrl = `http://localhost:5000/${path}`;
+    const imageUrl = `${SERVER_API}/${path}`;
 
-    const response = await axios.post("http://localhost:5000/seeds", {
+    const response = await axios.post(`${SERVER_API}/seeds`, {
       ...data,
       imageUrl,
     });
@@ -101,7 +103,7 @@ export const createSeed = (data, imgFile) => async (dispatch) => {
 
 export const getSeeds = () => async (dispatch) => {
   try {
-    const response = await axios.get("http://localhost:5000/seeds");
+    const response = await axios.get(`${SERVER_API}/seeds`);
 
     dispatch({
       type: GET_SEEDS,

@@ -1,11 +1,11 @@
-import React, { useRef, useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { useDispatch, useSelector } from 'react-redux';
-import { createSeed } from '../../redux/actions/seedActions';
-import { Redirect } from 'react-router-dom';
-import { setMessage } from '../../redux/actions/modalActions';
+import React, { useRef, useState } from "react";
+import { useForm } from "react-hook-form";
+import { useDispatch, useSelector } from "react-redux";
+import { createSeed } from "../../redux/actions/seedActions";
+import { Redirect } from "react-router-dom";
+import { setMessage } from "../../redux/actions/modalActions";
 
-import './CreateSeed.scss';
+import "./CreateSeed.scss";
 
 const CreateProduct = () => {
   const { register, handleSubmit, errors } = useForm();
@@ -41,7 +41,7 @@ const CreateProduct = () => {
     dispatch(
       setMessage({
         message:
-          'User must be loged in to add products, please log in and try again',
+          "User must be loged in to add products, please log in and try again",
       })
     );
     return <Redirect to="/login" />;
@@ -93,18 +93,23 @@ const CreateProduct = () => {
           </div>
           <div
             className="create-seed__col-2"
-            style={{ marginBottom: '1.2rem' }}
+            style={{ marginBottom: "1.2rem" }}
           >
+            <input
+              onChange={uploadPhoto}
+              type="file"
+              className="create-seed__image-picker__file"
+              ref={fileSelector}
+            ></input>
             {imgUrl ? (
-              <img className="create-seed__image" src={imgUrl} alt="" />
+              <img
+                onClick={onSelectPhoto}
+                className="create-seed__image"
+                src={imgUrl}
+                alt=""
+              />
             ) : (
               <div className="create-seed__image-picker">
-                <input
-                  onChange={uploadPhoto}
-                  type="file"
-                  className="create-seed__image-picker__file"
-                  ref={fileSelector}
-                ></input>
                 <button
                   onClick={onSelectPhoto}
                   type="button"
@@ -114,8 +119,6 @@ const CreateProduct = () => {
                 </button>
               </div>
             )}
-
-            {/* <img className="create-seed__img" src="" alt="" /> */}
           </div>
         </div>
 

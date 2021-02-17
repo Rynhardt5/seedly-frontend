@@ -46,6 +46,8 @@ const App = () => {
     dispatch(loadCart(cart));
   }, [dispatch]);
 
+  console.log("Node environment", process.env.process.env.NODE_ENV);
+
   return (
     <Fragment>
       <Router>

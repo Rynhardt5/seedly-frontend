@@ -22,9 +22,9 @@ const ShowProducts = () => {
   }, [dispatch, seedItem]);
 
   useEffect(() => {
-    if (!seeds) {
-      dispatch(getSeeds());
-    }
+    // if (!seeds) {
+    dispatch(getSeeds());
+    // }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
