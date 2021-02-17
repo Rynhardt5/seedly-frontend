@@ -12,12 +12,13 @@ import {
 import { setMessage } from "./modalActions";
 import axios from "axios";
 
-const SERVER_API = process.env.REACT_APP_SERVER_API;
-
 export const searchQuery = (query) => async (dispatch) => {
-  const response = await axios.post(`${SERVER_API}/seeds/filter`, {
-    query,
-  });
+  const response = await axios.post(
+    `${process.env.REACT_APP_SERVER_API}/seeds/filter`,
+    {
+      query,
+    }
+  );
 
   const reply = response.data.seeds.length === 0 ? null : response.data.seeds;
 
@@ -49,7 +50,10 @@ export const addSeedToCart = (seedId) => async (dispatch) => {
 export const getItemsFromCart = (cart) => async (dispatch) => {
   try {
     console.log("cart", cart);
-    const response = await axios.post(`${SERVER_API}/seeds/cart`, cart);
+    const response = await axios.post(
+      `${process.env.REACT_APP_SERVER_API}/seeds/cart`,
+      cart
+    );
     console.log("response", response);
     dispatch({
       type: GET_ITEMS_FROM_CART,
@@ -83,14 +87,20 @@ export const createSeed = (data, imgFile) => async (dispatch) => {
 
     const {
       data: { path },
-    } = await axios.post(`${SERVER_API}/images`, formData);
+    } = await axios.post(
+      `${process.env.REACT_APP_SERVER_API}/images`,
+      formData
+    );
 
-    const imageUrl = `${SERVER_API}/${path}`;
+    const imageUrl = `${process.env.REACT_APP_SERVER_API}/${path}`;
 
-    const response = await axios.post(`${SERVER_API}/seeds`, {
-      ...data,
-      imageUrl,
-    });
+    const response = await axios.post(
+      `${process.env.REACT_APP_SERVER_API}/seeds`,
+      {
+        ...data,
+        imageUrl,
+      }
+    );
 
     dispatch({
       type: CREATE_SEED,
@@ -103,7 +113,9 @@ export const createSeed = (data, imgFile) => async (dispatch) => {
 
 export const getSeeds = () => async (dispatch) => {
   try {
-    const response = await axios.get(`${SERVER_API}/seeds`);
+    const response = await axios.get(
+      `${process.env.REACT_APP_SERVER_API}/seeds`
+    );
 
     dispatch({
       type: GET_SEEDS,

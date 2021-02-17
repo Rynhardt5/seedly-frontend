@@ -12,14 +12,12 @@ import {
 
 import axios from "axios";
 
-const SERVER_API = process.env.REACT_APP_SERVER_API;
-
 export const resetPassword = ({ token, userId, password }) => async (
   dispatch
 ) => {
   try {
     const response = await axios.post(
-      `${SERVER_API}/users/password/reset/${token}/${userId}`,
+      `${process.env.REACT_APP_SERVER_API}/users/password/reset/${token}/${userId}`,
       { password }
     );
 
@@ -32,7 +30,7 @@ export const resetPassword = ({ token, userId, password }) => async (
 export const resetPasswordByEmail = (email) => async (dispatch) => {
   try {
     const response = await axios.post(
-      `${SERVER_API}/users/password/reset/email`,
+      `${process.env.REACT_APP_SERVER_API}/users/password/reset/email`,
       email
     );
 
@@ -64,7 +62,9 @@ export const loadUser = (token) => async (dispatch) => {
       setAuthToken(token);
     }
 
-    const response = await axios.get(`${SERVER_API}/users/current`);
+    const response = await axios.get(
+      `${process.env.REACT_APP_SERVER_API}/users/current`
+    );
 
     if (response) {
       localStorage.setItem("token", JSON.stringify(token));
@@ -89,7 +89,10 @@ export const loadUser = (token) => async (dispatch) => {
 
 export const logUserIn = (data) => async (dispatch) => {
   try {
-    const response = await axios.post(`${SERVER_API}/users/login`, data);
+    const response = await axios.post(
+      `${process.env.REACT_APP_SERVER_API}/users/login`,
+      data
+    );
 
     if (response) {
       dispatch({
@@ -108,7 +111,10 @@ export const logUserIn = (data) => async (dispatch) => {
 
 export const registerUser = (data) => async (dispatch) => {
   try {
-    const response = await axios.post(`${SERVER_API}/users/register`, data);
+    const response = await axios.post(
+      `${process.env.REACT_APP_SERVER_API}/users/register`,
+      data
+    );
 
     if (response) {
       dispatch({
