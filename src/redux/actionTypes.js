@@ -1,0 +1,20 @@
+export const USER_LOGGED_IN = "USER_LOGGED_IN";
+export const USER_REGISTERED = "USER_REGISTERED";
+export const LOAD_USER = "LOAD_USER";
+export const LOG_USER_OUT = "LOG_USER_OUT";
+export const SET_LOADING_TO_FALSE = "SET_LOADING_TO_FALSE";
+export const SET_PASSWORD_RESET = "SET_PASSWORD_RESET";
+
+export const SET_MESSAGE = "SET_MESSAGE";
+export const CLEAR_MESSAGE = "CLEAR_MESSAGE";
+
+export const CREATE_SEED = "CREATE_SEED";
+export const GET_SEEDS = "GET_SEEDS";
+export const CLEAR_SEED_ITEM = "CLEAR_SEED_ITEM";
+export const ADD_TO_CART = "ADD_TO_CART";
+export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
+export const LOAD_CART = "LOAD_CART";
+export const GET_ITEMS_FROM_CART = "GET_ITEMS_FROM_CART";
+
+export const SEND_SEARCH_QUERY = "SEND_SEARCH_QUERY";
+export const CLEAR_FILTERED_ITEMS = "CLEAR_FILTERED_ITEMS";

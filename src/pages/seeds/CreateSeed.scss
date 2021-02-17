@@ -1,0 +1,74 @@
+@import "../../Variables.scss";
+
+.create-seed {
+  &__form-heading {
+    margin-bottom: 1rem;
+  }
+  &__row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__col-2 {
+    width: 55%;
+
+    &:last-of-type {
+      width: 40%;
+    }
+  }
+
+  &__image {
+    height: 190px;
+    width: 100%;
+    border: 1px solid $default-border-color;
+    border-radius: $default-border-radius;
+    object-fit: cover;
+  }
+
+  &__image-picker {
+    height: 100%;
+    width: 100%;
+    border: 1px solid $default-border-color;
+    border-radius: $default-border-radius;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__file {
+      display: none;
+    }
+
+    &__btn {
+      padding: 0 2rem;
+      height: 2rem;
+      border: 1px solid $button-color;
+      color: white;
+      font-size: 1rem;
+      background: $button-color;
+      border-radius: $default-border-radius;
+      cursor: pointer;
+      transition: all 0.2s;
+      outline: none;
+
+      &:hover {
+        background: $button-hover;
+        color: white;
+      }
+
+      &:focus {
+        box-shadow: $box-shaddow-outline;
+      }
+    }
+  }
+
+  //   &__img {
+  //     height: 100%;
+  //     width: 100%;
+  // bor
+  //   }
+}
+
+.default-form.create-seed {
+  margin-top: 1rem;
+  width: 800px;
+}

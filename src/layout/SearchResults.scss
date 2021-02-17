@@ -1,0 +1,93 @@
+@import '../Variables.scss';
+
+.search-results {
+  position: absolute;
+  left: -9rem;
+  top: 3rem;
+  background: white;
+  width: 600px;
+  padding: 2rem;
+  border: 1px solid $default-border-color;
+  border-radius: $default-border-radius;
+  box-shadow: 0 2px 2px rgba($color: #000000, $alpha: 0.12);
+
+  &__open {
+    &-enter {
+      opacity: 0;
+    }
+
+    &-enter-active {
+      opacity: 1;
+      transition: all 300ms;
+    }
+  }
+
+  &__info {
+    display: flex;
+  }
+
+  &__img {
+    width: 100px;
+    max-height: 74px;
+    margin-right: 1rem;
+    border-radius: 5px;
+    object-fit: cover;
+  }
+
+  &__name {
+    font-size: 1.4rem;
+    margin: 0.5rem 0;
+    color: #505050;
+  }
+
+  &__scientific-name {
+    margin: 0.5rem 0;
+  }
+
+  &__button {
+    height: 2rem;
+    padding: 0 1rem;
+    border: 1px solid $button-color;
+    color: white;
+    font-family: $heading-font-family;
+    font-size: 1rem;
+    background: $button-color;
+    border-radius: $default-border-radius;
+    cursor: pointer;
+    transition: all 0.2s;
+    outline: none;
+
+    &:hover {
+      background: $button-hover;
+      color: white;
+    }
+
+    &:focus {
+      box-shadow: $box-shaddow-outline;
+    }
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+
+    &:not(:last-of-type) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__btn-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  &__price {
+    text-align: center;
+    font-size: 1rem;
+  }
+}

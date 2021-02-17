@@ -1,0 +1,30 @@
+@import "./Variables.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: $default-font-family;
+  color: $default-font-color;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $heading-font-family;
+}
+
+.main-content {
+  padding: 1rem 3rem;
+  min-height: calc(100vh - 136px);
+}
+
+.text-align-center {
+  text-align: center;
+}

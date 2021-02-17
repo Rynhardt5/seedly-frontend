@@ -1,0 +1,53 @@
+@import '../Variables.scss';
+
+.cart-icon {
+  width: auto;
+  margin-top: -15px;
+  height: 50px;
+
+  &__lines {
+    fill: #bababa;
+  }
+
+  &__seed {
+    fill: $primary-color;
+  }
+
+  &__shell {
+    fill: $primary-color--dark;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: inherit;
+  }
+  &__container {
+    margin-left: 1rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__items {
+    &__number {
+      font-size: 0.8rem;
+      margin-left: 0.8rem;
+      position: relative;
+
+      &::after {
+        content: '';
+        width: 25px;
+        height: 25px;
+        background-color: rgb(223, 223, 223);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        border-radius: 100%;
+        z-index: -9;
+      }
+    }
+  }
+}

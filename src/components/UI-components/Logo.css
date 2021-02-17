@@ -1,0 +1,12 @@
+.seedly-logo {
+  width: 150px;
+  height: auto;
+}
+
+.logo-path {
+  fill: #85c7b7;
+}
+
+.logo-path.black {
+  fill: rgba(0, 0, 0, 0.6);
+}

@@ -1,0 +1,46 @@
+@import "../Variables.scss";
+
+.footer {
+  width: 100%;
+  background: $secondary-color;
+  margin-top: 2rem;
+  padding: 3rem;
+  color: $secondary-font-color;
+  display: flex;
+  justify-content: space-between;
+
+  &__link-group {
+    display: flex;
+  }
+
+  & .col-3 ul {
+    list-style: none;
+    font-family: $heading-font-family;
+    margin-top: 2rem;
+    & li {
+      margin-bottom: 1rem;
+    }
+  }
+
+  & .col-3 {
+    margin-right: 4rem;
+  }
+
+  &__copyright {
+    margin-top: 0.5rem;
+  }
+
+  &__header {
+    margin: 3rem 0 0.5rem 0;
+  }
+
+  &__heading {
+    margin-top: 1.8rem;
+  }
+
+  &__contact {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: $secondary-font-color;
+  }
+}

@@ -1,0 +1,90 @@
+@import "../Variables.scss";
+
+.main-navbar {
+  padding: 1rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__search-box {
+    position: relative;
+    &__input {
+      width: 325px;
+      height: 2.5rem;
+      padding: 0.5rem 0.6rem;
+      padding-left: 2.4rem;
+      border-radius: $default-border-radius;
+      border: 1.5px solid $default-border-color;
+      font-size: 1rem;
+      outline: none;
+      color: $default-font-color--dark;
+    }
+
+    &__input::placeholder {
+      color: #797979;
+    }
+
+    &__icon {
+      position: absolute;
+      left: 0.8rem;
+      top: 0.6rem;
+
+      & svg {
+        // margin-top: -15px;
+        width: 20px;
+        height: 20px;
+
+        fill: $default-font-color;
+      }
+    }
+
+    &__close-icon {
+      position: absolute;
+      right: 0.8rem;
+      top: 0.6rem;
+      cursor: pointer;
+
+      & svg {
+        // margin-top: -15px;
+        width: 20px;
+        height: 20px;
+
+        fill: $default-font-color;
+      }
+    }
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+
+    & li:not(:last-of-type) {
+      margin-right: 2rem;
+    }
+
+    & li a {
+      font-size: 1.4rem;
+      text-decoration: none;
+      color: $default-font-color;
+      font-family: "Baskervville", serif;
+      font-weight: 400;
+
+      &:hover {
+        color: #000;
+      }
+    }
+
+    & li a.active {
+      color: $default-font-color--dark;
+    }
+  }
+}
+
+.cart-icon__link {
+  & svg {
+    fill: $default-font-color;
+    width: 30px;
+    height: 30px;
+  }
+}
